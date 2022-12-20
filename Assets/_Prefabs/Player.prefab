@@ -93,9 +93,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2351846501554806549}
   - component: {fileID: 2351846501554806550}
-  - component: {fileID: 2351846501554806548}
   - component: {fileID: 2351846501554806762}
-  - component: {fileID: 2351846501554806763}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -118,7 +116,7 @@ Transform:
   - {fileID: 2351846501947660549}
   - {fileID: 2351846501289042311}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!143 &2351846501554806550
 CharacterController:
@@ -146,57 +144,6 @@ CharacterController:
   m_SkinWidth: 0.02
   m_MinMoveDistance: 0
   m_Center: {x: 0, y: 1, z: 0}
---- !u!114 &2351846501554806548
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2351846501554806551}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Actions: {fileID: -944628639613478452, guid: 227a42275f4d906409ad7db24e82645f,
-    type: 3}
-  m_NotificationBehavior: 2
-  m_UIInputModule: {fileID: 0}
-  m_DeviceLostEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_DeviceRegainedEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_ControlsChangedEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_ActionEvents:
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 6e6a15a7-4121-4ecd-a67b-2131833b04a2
-    m_ActionName: In-Game Player/Move[/Keyboard/w,/Keyboard/d,/Keyboard/a]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: c67fe02b-9a5f-4d2b-af81-d212b50049aa
-    m_ActionName: In-Game Player/Look[/Mouse/delta]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: e157e8ef-0d48-4ebf-ac45-db81f00f0e90
-    m_ActionName: In-Game Player/Jump[/Keyboard/space]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: ff40f4b6-f63c-4736-b1c1-ad21249181f0
-    m_ActionName: In-Game Player/Sprint[/Keyboard/leftShift]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: c8118835-e394-486c-a3a7-96c1756eec33
-    m_ActionName: In-Game Player/Shoot[/Mouse/leftButton]
-  m_NeverAutoSwitchControlSchemes: 0
-  m_DefaultControlScheme: 
-  m_DefaultActionMap: In-Game Player
-  m_SplitScreenIndex: -1
-  m_Camera: {fileID: 0}
 --- !u!114 &2351846501554806762
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -209,18 +156,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b68ebbcd753ca34389f509115b74d5d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &2351846501554806763
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2351846501554806551}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0e91d252d80aa794b8d37bd8fea0bb28, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  moveSpeed: 2
+  sprintSpeed: 5
+  speedChangeEasing: 10
+  jumpHeight: 1.2
+  gravity: -15
+  jumpTimeout: 0.5
+  fallTimeout: 0.15
+  groundLayers:
+    serializedVersion: 2
+    m_Bits: 64
+  sphereRadius: 0.28
+  sphereOffset: {x: 0, y: -0.14, z: 0}
 --- !u!1 &2351846501947660550
 GameObject:
   m_ObjectHideFlags: 0

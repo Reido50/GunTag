@@ -13,7 +13,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField] float jumpHeight;
     [SerializeField] float jumpTimeout;
     [SerializeField] float jumpHeldGravity;
-    [SerializeField] float gravity;
+    [SerializeField] float fallingGravity;
+    [SerializeField] float groundedGravityVel;
 
     [Header("Grounded Checking")]
     [SerializeField] LayerMask groundLayers;
@@ -134,6 +135,7 @@ public class PlayerController : MonoBehaviour
     {
         if (!_grounded)
         {
+            // Jump Held Gravity vs Falling Gravity
             if (_Input.jumpHeld && _jumping && _verticalVelocity > 0)
             {
                 _verticalVelocity += jumpHeldGravity * Time.deltaTime;
@@ -142,8 +144,13 @@ public class PlayerController : MonoBehaviour
             {
                 _jumping = false;
 
-                _verticalVelocity += gravity * Time.deltaTime;
+                _verticalVelocity += fallingGravity * Time.deltaTime;
             }
+        }
+        else if (!_jumping)
+        {
+            // Apply grounded gravity
+            _verticalVelocity = groundedGravityVel;
         }
     }
 }
